@@ -1,0 +1,1 @@
+Virtual environment with Django installation.

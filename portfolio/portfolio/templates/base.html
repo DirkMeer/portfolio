@@ -17,8 +17,8 @@
         }
       </style>
         <nav class="navbar navbar-custom navbar-expand-md navbar-light">
-            <div class="container">
-                <a class="navbar-brand" href="{% url 'project_index' %}">DikySoft</a>
+            <div class="container col-md-12">
+                <a class="navbar-brand" href="{% url 'pages_home' %}">DikySoft</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
@@ -28,6 +28,10 @@
                     <li class="nav-item active">
                       <a class="nav-link" href="{% url 'project_index' %}">Portfolio</a>
                     </li>
+                    <li class="nav-item active">
+                      <a class="nav-link" href="{% url 'certification_index' %}">Certifications</a>
+                    </li>
+
                     <li class="nav-item">
                       <a class="nav-link" href="{% url 'blog_index' %}">Blog</a>
                     </li>
@@ -36,6 +40,8 @@
             </div>
         </nav>
         <br>
+        <div class="container col-md-12">
         {% block content %}{% endblock %}
+        </div>
     </body>
     </html>

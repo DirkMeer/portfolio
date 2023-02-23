@@ -3,7 +3,7 @@ from certifications.models import Certification
 
 # Create your views here.
 def certification_index(request):
-    certifications = Certification.objects.all()
+    certifications = Certification.objects.all().order_by('-issue_date').values()
     context = {
         'certifications': certifications
     }

@@ -9,7 +9,7 @@ class Certification(models.Model):
     issue_date = models.DateField()
     technology = models.CharField(max_length=60)
     workload = models.PositiveIntegerField()
-    image = models.FilePathField(path='certifications/static/img')
+    image = models.CharField(max_length=100)
     url = models.URLField()
 
     def __str__(self):

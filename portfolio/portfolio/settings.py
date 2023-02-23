@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'blog',
     'pages',
     'certifications',
+    'eurwon_converter',
 
     'django.contrib.admin',
     'django.contrib.auth',

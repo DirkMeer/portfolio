@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('projects/', include('projects.urls')),
     path('blog/', include('blog.urls')),
-    path('certifications/', include('certifications.urls')),
+    path('certs/', include('certifications.urls')),
+    path('eurwon/', include('eurwon_converter.urls')),
 ]

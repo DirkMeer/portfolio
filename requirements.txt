@@ -1,3 +1,7 @@
-Virtual environment with Django installation.
--Django
--django-bootstrap-v5
+asgiref==3.6.0
+beautifulsoup4==4.11.2
+Django==4.1.7
+django-bootstrap-v5==1.0.11
+soupsieve==2.4
+sqlparse==0.4.3
+tzdata==2022.7

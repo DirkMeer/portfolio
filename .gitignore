@@ -1,3 +1,4 @@
 .env
 venv/
 .sqlite3
+__pycache__

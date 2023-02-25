@@ -1,5 +1,4 @@
 from django.contrib import admin
-from projects.models import Project
 from blog.models import Post, Category, Comment
 
 # Register your models here.
@@ -16,9 +15,3 @@ admin.site.register(Post, PostAdmin)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Comment, CommentAdmin)
 
-
-
-class ProjectAdmin(admin.ModelAdmin):
-    pass
-
-admin.site.register(Project, ProjectAdmin)

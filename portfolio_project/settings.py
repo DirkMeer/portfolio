@@ -14,7 +14,12 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool)
 
-ALLOWED_HOSTS = ['dirkmeer.herokuapp.com', '127.0.0.1', 'dirkmeer.com']
+ALLOWED_HOSTS = [
+    'dirkmeer.herokuapp.com',
+    '127.0.0.1',
+    'dirkmeer.com',
+    'www.dirkmeer.com',
+]
 
 
 # Application definition

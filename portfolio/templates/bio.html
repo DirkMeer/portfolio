@@ -1,9 +1,15 @@
 {% extends "base.html" %} 
-
+{% load static %} 
 {% block content %} 
 
-
-Welcome to my portfolio website.
+<div class="row">
+    <div class="col">
+        <img src="{% static 'img/Profile_picture.jpg' %}" alt="Profile picture" class="img-fluid round10">
+    </div>
+    <div class="col">
+        Welcome to my portfolio website. My name is Dirk. I am a full-stack web developer, working mainly with Python/Django and JavaScript/React. This portfolio is just a small beginning and will expand over time.
+    </div>
+</div>
 
 
 {% endblock %}

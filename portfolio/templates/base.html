@@ -9,8 +9,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>DirkMeer.com</title>
     <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="icon" href="{% static 'favicon/favicon.ico' %}">
 </head>
 <body>
   <style>
@@ -20,7 +21,10 @@
   </style>
     <nav class="navbar navbar-custom navbar-expand-md navbar-light">
         <div class="container col-md-12">
-            <a class="navbar-brand" href="{% url 'portfolio_bio' %}">DirkMeer.com</a>
+            <a class="navbar-brand me-4" href="{% url 'portfolio_bio' %}">
+              <!-- <img src="{% static 'favicon/192.png' %}" alt="Site logo" width="30" height="30" class="d-inline-block align-text-top"> -->
+              <span>DirkMeer</span>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -28,7 +32,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
 
-                <li class="nav-item active">
+                <li class="nav-item active ms-2">
                   <a class="nav-link" href="{% url 'portfolio_project_list' %}">Projects</a>
                 </li>
 
@@ -36,7 +40,7 @@
                   <a class="nav-link" href="{% url 'blog_index' %}">Blog</a>
                 </li> -->
                 
-                <li class="nav-item active">
+                <li class="nav-item active ms-2">
                   <a class="nav-link" href="{% url 'portfolio_certification_list' %}">Certifications</a>
                 </li>
 

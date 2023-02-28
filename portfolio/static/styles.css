@@ -1,3 +1,20 @@
 .round10{
     border-radius: 6px !important;
 }
+
+button.navbar-toggler {
+    width: 105px;
+    border-color: #999999 !important;
+    display: flex;
+}
+
+.navbar-toggler-icon::after {
+    content: "MENU";
+    font-weight: bold;
+    font-size: 14px;
+    padding-left: 35px;
+    color: #686868;
+    top: -10px;
+    vertical-align: -20%;
+
+}

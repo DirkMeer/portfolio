@@ -22,6 +22,8 @@ class Project(models.Model):
     short_description = models.TextField(max_length=100)
     technology = models.CharField(max_length=60)
     image = models.CharField(max_length=100)
+    live_url = models.URLField()
+    source_url = models.URLField(blank=True)
 
     def __str__(self):
         return self.title

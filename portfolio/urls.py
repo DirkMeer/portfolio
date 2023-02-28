@@ -3,16 +3,16 @@ from . import views
 
 urlpatterns = [
     path('', views.portfolio_bio, name='portfolio_bio'),
-    path('projects/', views.portfolio_projects, name='portfolio_projects'),
+    path('projects/', views.portfolio_project_list, name='portfolio_project_list'),
     path(
         'projects/<int:pk>/',
-        views.portfolio_projects_detail,
-        name='portfolio_projects_detail'
+        views.portfolio_project_detail,
+        name='portfolio_project_detail'
     ),
-    path('certifications/', views.portfolio_certifications, name='portfolio_certifications'),
+    path('certifications/', views.portfolio_certification_list, name='portfolio_certification_list'),
     path(
         'certifications/<int:pk>/',
-        views.portfolio_certifications_detail,
-        name='portfolio_certifications_detail'
+        views.portfolio_certification_detail,
+        name='portfolio_certification_detail'
     ),
 ]

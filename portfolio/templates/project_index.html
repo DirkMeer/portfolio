@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<h1>Projects</h1>
+<h1 class="mb-3">Projects</h1>
 <div class="row">
     {% for project in projects %}
     <div class="col-md-4">
@@ -10,7 +10,7 @@
             <div class="card-body">
                 <h5 class="card-title">{{ project.title }}</h5>
                 <p class="card-text">{{ project.short_description }}</p>
-                <a href="{% url 'project_detail' project.pk %}" class="btn btn-primary">
+                <a href="{% url 'portfolio_project_detail' project.pk %}" class="btn btn-primary">
                     Read More
                 </a>
             </div>

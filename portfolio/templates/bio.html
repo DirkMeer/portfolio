@@ -1,9 +1,21 @@
 {% extends "base.html" %} 
-
+{% load static %} 
 {% block content %} 
 
-
-Welcome to my portfolio website.
+<div class="row">
+    <div class="col-sm-5 col-lg-3 mb-3">
+        <img src="{% static 'img/Profile_picture.jpg' %}" alt="Profile picture" class="img-fluid round10">
+    </div>
+    <div class="col-sm-7 col-lg-6">
+        <h1 class="mb-3">Dirk van Meerveld</h1>
+        <p>Welcome to my portfolio website. My name is Dirk. I am a full-stack web developer, working mainly with Python / Django and JavaScript / React. This portfolio is just a small beginning and will expand over time, it runs on the Django framework using Python and an SQL database.</p>
+        <p>For now you can check out some of my projects and certifications.</p>
+    </div>
+</div>
 
 
 {% endblock %}
+
+
+
+<!-- reeniebeanie -->

@@ -3,16 +3,28 @@
 
 {% block content %} 
     <div class="row">
-        <h1>{{ project.title }}</h1>
-        <div class = "col-md-8">
-            <img src="{% static project.image %}" alt="" width="100%">
+        <h1 class="mb-3">{{ project.title }}</h1>
+        <div class = "col-md-6 col-xl-5">
+            <img src="{% static project.image %}" alt="" width="100%" class="mb-3 round10">
         </div>
-        <div class ="col-md-4">
+        <div class ="col-md-6 col-xl-7">
             <h5>About the project:</h5>
-            <p>{{ project.description }}</p>
-            <br>
-            <h5>Technology used</h5>
-            <p>{{ project.technology }}</p>
+            <span class="mb-4">{{ project.description|linebreaks }}</span>
+            <h5 class="mt-4">Technology stack</h5>
+            <p class="mb-3">{{ project.technology }}</p>
+            <div class="d-grid gap-2 col-xs-12 mx-auto">
+                <p><a href="{{ project.live_url }}"
+                        target="_blank"
+                        class="btn btn-secondary mb-2">
+                        Live project</a>
+                    {% if project.source_url %} 
+                        <a href="{{ project.source_url }}"
+                            target="_blank"
+                            class="btn btn-outline-secondary mb-2">
+                            Source code</a> 
+                    {% endif %} 
+                </p>
+            </div>
         </div>
     </div>
 {% endblock %}

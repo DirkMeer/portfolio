@@ -1,0 +1,34 @@
+{% extends 'etbase.html' %}
+{% load addclass %}
+
+{% block content %}
+
+<div class="my-3 mx-3">
+    <h2 class="mb-3">Create a new account</h2>
+    <form method="post">
+        {{form.non_field_errors}}
+        {% csrf_token %}
+        {% for field in form %}
+        <p>
+            {{field.label_tag}}
+            {{ field | addclass:"form-control"}}
+            <small style="color: grey">
+                <!-- {{ field.help_text | safe }} -->
+            </small>
+            {% if field.errors %} 
+                {{ field.errors }}
+            {% endif %}
+        </p>
+        {% endfor %} 
+        <div class="container-fluid btn-container">
+                <input type="submit" value="Create account" class="btn btn-success mt-1 me-sm-2 px-4">
+
+                <a href="javascript:window.history.back()" class="btn btn-secondary mt-1 me-sm-2 px-4">
+                    Cancel
+                </a>
+        </div>
+    </form>
+</div>
+
+
+{% endblock %}

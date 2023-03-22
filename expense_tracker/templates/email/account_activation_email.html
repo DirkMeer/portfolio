@@ -1,0 +1,11 @@
+{% autoescape off %} 
+Welcome {{user}},
+
+Please use the link below to confirm your account:
+
+{{protocol}}://{{domain}}{% url 'activate' uidb64=uid token=token %} 
+
+Sincerely,
+DirkMeer
+
+{% endautoescape %} 

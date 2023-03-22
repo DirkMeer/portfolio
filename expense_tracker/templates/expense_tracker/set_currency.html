@@ -1,0 +1,21 @@
+{% extends 'etbase.html' %} 
+
+{% block content %} 
+    <div class="my-3 mx-3">
+        <h2 class="mb-3">{{title}}</h2>
+        <form method="post">
+            {% csrf_token %} 
+            {{ form.as_p }}
+            <div class="container-fluid btn-container">
+                    <input type="submit" value="Submit" 
+                        class="btn btn-success mt-1 me-sm-2 px-4">
+                    
+                    <a href="{% url 'dashboard' %}?year={{ref_year}}&amp;month={{ref_month}}" 
+                        class="btn btn-secondary mt-1 me-sm-2 px-4">
+                        Cancel
+                    </a>
+            </div>
+        </form>
+    </div>
+
+{% endblock %} 

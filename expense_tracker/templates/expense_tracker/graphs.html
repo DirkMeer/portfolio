@@ -1,0 +1,21 @@
+{% block graphs %} 
+
+<div class="container-fluid g-0">
+    <div class="row g-0">
+        <div class="col-md-6">
+            <!-- bar chart -->
+            <img src="data:image/png;base64,{{bar_chart}}" 
+                alt="Bar chart showing expenses by category" 
+                class="graph-fluid px-2 mb-3 mx-auto d-block">
+        </div>
+        
+        <div class="col-md-6">
+            <!-- pie chart -->
+            <img src="data:image/png;base64,{{pie_chart}}" 
+                alt="Pie chart showing expenses by category" 
+                class="graph-fluid px-2 mb-3 mx-auto d-block">
+        </div>
+    </div>
+</div>
+
+{% endblock %} 

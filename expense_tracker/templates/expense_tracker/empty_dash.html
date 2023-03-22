@@ -1,0 +1,30 @@
+{% extends 'etbase.html' %}
+{% load humanize %}
+
+{% block content %}
+
+<div class="mt-2 mb-5 mx-3">
+    <div class="container-fluid btn-container">
+        <div class="row">
+            <h2 class="mt-2 mb-4">No expenses / data</h2>
+        </div>
+        <div class="row mb-2">
+            <p>
+                Nothing to see here, you have no expenses registered for
+                {% if month < 10 %} 0{{month}} {% else %} {{month}} {% endif %} -{{year}}. As soon as you add an expense
+                    to this month your standard monthly income and bills will be added automatically. 
+            </p>
+        </div>
+            <a href="{% url 'create_item' %}?mode=Ex" 
+                class="btn btn-success mt-1 me-sm-2 px-4">
+                Add an expense
+            </a>
+    </div>
+</div>
+
+
+<!-- pagination nav -->
+{% include 'expense_tracker/pagination.html' %}
+
+
+{% endblock %}

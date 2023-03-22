@@ -1,0 +1,39 @@
+{% extends 'etbase.html' %}
+{% load addclass %}
+
+{% block content %}
+
+<div class="my-3 mx-3">
+    <div class="login-or mb-4">
+        <h2>Login</h2>
+        <span>
+            (or <a href="{% url 'signup' %}">create a new account</a>)
+        </span>
+    </div>
+    <form method="POST">
+        {{form.non_field_errors}}
+        {% csrf_token %}
+        {% for field in form %}
+        <p>
+            {{field.label_tag}}
+            {{ field | addclass:"form-control"}}
+            {{ field.help_text | safe }}
+            {% if field.errors %}
+            {{ field.errors }}
+        </p>
+        {% endif %}
+        {% endfor %}
+        <div class="container-fluid btn-container">
+            <input type="submit" value="Login" 
+                class="btn btn-success mt-1 me-sm-2 px-4">
+                
+            <a href="{% url 'reset_password' %}" 
+                class="btn btn-outline-danger mt-1 me-sm-2 px-4">
+                Forgot password?
+            </a>
+        </div>
+    </form>
+</div>
+
+
+{% endblock %}

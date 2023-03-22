@@ -1,0 +1,39 @@
+{% extends 'etbase.html' %} 
+
+{% block content %} 
+<div class="my-3 mx-3">
+    <h2 class="mb-3">{{title}}</h2>
+    <form method="post">
+        {% csrf_token %} 
+        {{ form.as_p }}
+        <div class="container-fluid btn-container mt-4 mx-0 p-0">
+
+                <input type="submit" value="Submit" 
+                    class="btn btn-success mt-1 me-sm-2 px-4">
+
+                <a href="{% url 'dashboard' %}?year={{ref_year}}&amp;month={{ref_month}}" 
+                    class="btn btn-secondary mt-1 me-sm-2 px-4">
+                    Cancel
+                </a>
+
+            {% if mode == 'Ex' and not edit %} 
+            <!-- Show create new category button -->
+                <a href="{% url 'create_item' %}?mode=Cat" 
+                    class="btn btn-primary mt-1 me-sm-2 px-4">
+                    Add more categories
+                </a>
+            {% endif %} 
+
+            {% if edit %} 
+            <!-- Show delete button -->
+                <a href="{% url 'delete_item' pk=pk %}?mode={{mode}}" 
+                    class="btn btn-danger mt-1 me-sm-2 px-4">
+                    Delete
+                </a>
+            {% endif %} 
+
+        </div>
+    </form>
+</div>
+
+{% endblock %} 

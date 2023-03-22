@@ -1,0 +1,31 @@
+{% block pagination %} 
+
+<nav aria-label="month navigation">
+    <ul class="pagination justify-content-center mt-2 mb-0">
+        <li class="page-item mb-0">
+            <a class="page-link" 
+                href="{% url 'dashboard' %}?year={{year_minus}}&amp;month={{month_minus}}"
+                aria-label="Previous">
+                <span aria-hidden="true">&laquo;-- Previous</span>
+            </a>
+        </li>
+        {% if month < 10 %} 
+            <li class="page-item mb-0">
+                <p class="page-link">0{{month}}-{{year}}</p>
+            </li>
+        {% else %} 
+            <li class="page-item mb-0">
+                <p class="page-link">{{month}}-{{year}}</p>
+            </li>
+        {% endif %} 
+        <li class="page-item mb-0">
+            <a class="page-link" 
+                href="{% url 'dashboard' %}?year={{year_plus}}&amp;month={{month_plus}}"
+                aria-label="Next">
+                <span aria-hidden="true">Next --&raquo;</span>
+            </a>
+        </li>
+    </ul>
+</nav>
+
+{% endblock %} 

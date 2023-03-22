@@ -1,0 +1,55 @@
+{% extends 'etbase.html' %} 
+
+{% block content %}
+<main>
+    {% if categories %} 
+    <table class="table table-bordered zebra table-hover mb-0 table-sm mt-lg-4">
+        <thead class="table-primary table-striped-columns">
+            <tr>
+                <th scope="col" class="th1">Category name:</th>
+                <th scope="col" class="th2">&nbsp;</th>
+                <th scope="col" class="th3">&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+                {% for category in categories %} 
+                <tr>
+                    <td><a 
+                        href="{% url 'edit_item' pk=category.id %}?mode=Cat" 
+                        class="text-decoration-none link-dark">
+                        {{ category.name }}
+                    </a></td>
+                    <td>
+                        <a 
+                        href="{% url 'edit_item' pk=category.id %}?mode=Cat" 
+                        class="text-decoration-none link-dark">
+                        <i class="fa-solid fa-pencil"></i> Edit category
+                    </a></td>
+                    <td><a 
+                        href="{% url 'delete_item' pk=category.id %}?mode=Cat" 
+                        class="text-decoration-none link-dark">
+                        <i class="fa-solid fa-trash"></i> Delete category
+                    </a></td>
+                </tr>
+                {% endfor %} 
+            </tbody>
+        </table>
+        {% else %} 
+        <div class="mt-2 mb-3 mx-3">
+            <h2 class="my-3">No categories found</h2>
+                <div class="container-fluid btn-container">
+                    <div class="row">
+                        <p>
+                            You have not created any categories yet. You must create categories before you  can start creating and grouping your expenses.
+                        </p>
+                    </div>
+                        <a href="{% url 'create_item' %}?mode=Cat"
+                            class="btn btn-success mt-1 me-sm-2 px-4">
+                            Add a category
+                        </a>
+                </div>
+        </div>
+        {% endif %} 
+</main>
+
+{% endblock %} 

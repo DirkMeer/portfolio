@@ -1,0 +1,2 @@
+class EmailNotUniqueError(Exception):
+    pass

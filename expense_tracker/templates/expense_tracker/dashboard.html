@@ -1,0 +1,97 @@
+{% extends 'etbase.html' %} 
+{% load humanize %} 
+
+{% block content %}
+
+<table class="table table-bordered zebra table-hover mb-0 table-sm mt-lg-4">
+<!-- monthly income listing -->
+    <thead class="table-primary">
+        <tr>
+            <th scope="col" class="th1 ps-2">Description</th>
+            <th scope="col" class="th2">Amt. {{Currency}}</th>
+            <th scope="col" class="th3">Date</th>
+            <th scope="col" class="d-none d-sm-table-cell">Category</th> 
+        </tr>
+    </thead>
+    <tbody>
+        {% for income in MonthlyIncome %} 
+        <tr>
+            <td class="ps-2"><a 
+                href="{% url 'edit_item' pk=income.id %}?mode=MoIn" 
+                class="text-decoration-none link-dark">
+                <div>{{ income.description }}</div>
+            </a></td>
+            <td class="text-success">+{{ income.amount|floatformat:-2|intcomma }}</td>
+            <td>Monthly</td>
+            <td class="d-none d-sm-table-cell">Monthly</td>
+        </tr>
+        {% endfor %} 
+<!-- monthly expenses listing -->
+        {% for expense in MonthlyExpense %} 
+        <tr>
+            <td class="ps-2"><a 
+                href="{% url 'edit_item' pk=expense.id %}?mode=MoEx" 
+                class="text-decoration-none link-dark">
+                <div>{{ expense.description }}</div>
+            </a></td>
+            <td>-{{ expense.amount|floatformat:-2|intcomma }}</td>
+            <td>Monthly</td>
+            <td class="d-none d-sm-table-cell">Monthly</td>
+        </tr>
+        {% endfor %} 
+<!-- income listing -->
+        {% for income in Income %} 
+        <tr>
+            <td class="ps-2"><a 
+                href="{% url 'edit_item' pk=income.id %}?mode=In" 
+                class="text-decoration-none link-dark">
+                <div>{{ income.description }}</div>
+            </a></td>
+            <td class="text-success">+{{ income.amount|floatformat:-2|intcomma }}</td>
+            <td>{{ income.date }}</td>
+            <td class="d-none d-sm-table-cell">Income</td>
+        </tr>
+        {% endfor %} 
+<!-- expense listing -->
+        {% for expense in Expense %} 
+        <tr>
+            <td class="ps-2"><a 
+                href="{% url 'edit_item' pk=expense.id %}?mode=Ex" 
+                class="text-decoration-none link-dark">
+                <div>{{ expense.description }}</div>
+            </a></td>
+            <td>-{{ expense.amount|floatformat:-2|intcomma }}</td>
+            <td>{{ expense.date }}</td>
+            <td class="d-none d-sm-table-cell">{{ expense.category }}</td>
+        </tr>
+        {% endfor %} 
+    </tbody>
+</table>
+<!-- balance and expenses total lint -->
+<table class="table table-bordered table-hover mb-0 table-sm">
+    <thead class="table-primary">
+        <tr>
+            <th scope="col" class="d-flex justify-content-between pe-2">
+                <div class="balance ps-1">
+                    Balance: 
+                    {% if balance > 0 %} 
+                        <span class="text-success">
+                            {{Currency.currency_symbol}}{{ balance|floatformat:-2|intcomma }}</span>
+                    {% else %} 
+                        <span class="text-danger">
+                            {{Currency.currency_symbol}}{{ balance|floatformat:-2|intcomma }}</span>
+                    {% endif %} 
+                </div>
+                <div class="total_spent">
+                    Expenses:
+                    {{Currency.currency_symbol}}{{ tot_expenses|floatformat:-2|intcomma }}
+                </div>
+            </th>
+        </tr>
+    </thead>
+</table>
+<!-- pagination nav -->
+{% include 'expense_tracker/pagination.html' %} 
+{% include 'expense_tracker/graphs.html' %}
+
+{% endblock %} 

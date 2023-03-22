@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% include 'etbase_head.html' %}
+</head>
+
+<body>
+
+    <header>
+        {% include 'etbase_nav.html' %}
+        {% include 'etbase_messages.html' %}
+    </header>
+
+    <main>
+        <div class="container-fluid pg-mwidth g-0 shadow-lr pe-lg-4">
+            <div class="row g-0">
+                <div class="col-lg-3 d-lg-block" style="display:none;">
+                    {% include 'etbase_sidebar.html' %}
+                </div>
+                <div class="col-lg-9">
+                    {% block content %}
+                    {% endblock content %}
+                </div>
+            </div>
+        </div>
+    </main>
+    
+</body>
+
+</html>

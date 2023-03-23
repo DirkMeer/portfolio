@@ -1,3 +1,5 @@
+import sys
+
 from decouple import config
 from pathlib import Path
 from django.contrib.messages import constants as messages
@@ -76,13 +78,25 @@ WSGI_APPLICATION = 'portfolio_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if config('LOCAL'):
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': config('PG_NAME'),
+            'USER': config('PG_USER'),
+            'PASSWORD': config('PG_PASSWORD'),
+            'HOST': config('PG_HOST'),
+            'PORT': config('PG_PORT'),
+        }
     }
-}
-
+else:
+    import dj_database_url
+    DATABASES = {
+        'default': dj_database_url.config(
+            conn_max_age=600,
+            conn_health_checks=True,
+        )
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -168,3 +182,11 @@ SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
 
 # Allow login via either username or email
 AUTHENTICATION_BACKENDS = ['expense_tracker.backends.EmailAuthBackend']
+
+
+# Use temp sqlite3 db if running tests
+# if 'test' in sys.argv:
+#     DATABASES['default'] = {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': 'mydatabase'
+#     }

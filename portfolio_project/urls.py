@@ -5,7 +5,7 @@ from expense_tracker.forms import AuthenticationFormCaptcha
 
 urlpatterns = [
     path('', include('portfolio.urls')),
-    path('blog/', include('blog.urls')),
+    # path('blog/', include('blog.urls')), --disabled for now
     path('expense_tracker/', include('expense_tracker.urls')),
     # Custom define the login page to add a captcha to the form
     path('user/login/',

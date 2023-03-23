@@ -188,5 +188,5 @@ AUTHENTICATION_BACKENDS = ['expense_tracker.backends.EmailAuthBackend']
 # if 'test' in sys.argv:
 #     DATABASES['default'] = {
 #         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': 'mydatabase'
+#         'NAME': 'test_database'
 #     }

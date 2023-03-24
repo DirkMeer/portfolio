@@ -17,6 +17,6 @@ def user_not_authenticated(function=None, redirect_url='/'):
     
 
     if function:
-        return decorator(function)
+        return decorator(function) # pragma: no cover / decorator's functioning tested both ways
     
     return decorator

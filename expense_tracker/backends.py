@@ -1,5 +1,6 @@
 from django.contrib.auth.backends import ModelBackend
 from django.contrib.auth import get_user_model
+from django.contrib import messages
 from django.db.models import Q
 
 UserModel = get_user_model()
@@ -18,5 +19,11 @@ class EmailAuthBackend(ModelBackend):
         # Check password and if user account is active
         if user.check_password(password) and self.user_can_authenticate(user):
             return user
+        # Alert the user if password is correct but account not yet activated
+        elif user.check_password(password) and not getattr(user, 'is_active'):
+            messages.add_message(
+                request, messages.ERROR, f"Your account has not yet been activated. Please check your email and click the activation link before continuing."
+            )
+            return None
         else:
             return None

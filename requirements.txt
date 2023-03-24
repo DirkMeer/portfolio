@@ -16,8 +16,10 @@ defusedxml==0.7.1
 dj-database-url==1.2.0
 Django==4.1.7
 django-allauth==0.53.0
+django-axes==5.40.1
 django-bootstrap-v5==1.0.11
 django-crispy-forms==1.14.0
+django-ipware==5.0.0
 django-recaptcha==3.0.0
 emoji==2.2.0
 exceptiongroup==1.1.1

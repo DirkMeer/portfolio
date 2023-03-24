@@ -21,11 +21,11 @@ def get_reference_year_month(request):
 # Get the correct 1month forward and 1month backward dates (year and month)
 def get_next_and_previous_month_and_year(month, year):
     context = {}
-    if month == 1:
+    if month <= 1:
         context['month_minus'], context['year_minus'] = 12, year-1
     else:
         context['month_minus'], context['year_minus'] = month-1, year
-    if month == 12:
+    if month >= 12:
         context['month_plus'], context['year_plus'] = 1, year+1
     else:
         context['month_plus'], context['year_plus'] = month+1, year

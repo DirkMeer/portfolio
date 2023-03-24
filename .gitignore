@@ -2,3 +2,6 @@
 venv/
 *.sqlite3
 __pycache__/
+.coverage
+htmlcov/
+test_database

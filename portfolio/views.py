@@ -25,6 +25,6 @@ def portfolio_certification_list(request):
     }
     return render(request, 'certification_index.html', context)
 
-def portfolio_certification_detail(request):
-    return render(request, 'certification_detail.html')
-    # Not yet implemented
+# def portfolio_certification_detail(request):
+#     return render(request, 'certification_detail.html')
+#     # Not yet implemented

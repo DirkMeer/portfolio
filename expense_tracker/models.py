@@ -130,6 +130,7 @@ def save_user_setting(sender, instance, **kwargs):
     try:
         instance.setting.save()
     # If for some reason the setting object does not exist
-    except:
+    except: # pragma: no cover
+        # Is covered by test_create_user_setting_if_nonexistent
         Setting.objects.create(user=instance)
 

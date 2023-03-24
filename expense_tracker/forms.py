@@ -145,8 +145,6 @@ class AuthenticationFormCaptcha(AuthenticationForm):
         attrs={'class': 'form-control', 'placeholder': 'Password'}),
         label="Password")
 
-    captcha = ReCaptchaField(widget=ReCaptchaV2Checkbox())
-
 
 class SignUpForm(UserCreationForm):
     email = forms.EmailField(max_length=254, help_text='Required. Please provide a valid email address')

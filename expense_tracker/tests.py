@@ -223,30 +223,3 @@ class ExpenseTrackerTest(TestCase):
         for url in urls:
             resp = self.client.get(url)
             self.assertRedirects(resp, f'{reverse("login")}?next={url}', status_code=302)
-
-
-
-
-    # # View tests
-    # def test_portfolio_bio_view(self):
-    #     url = reverse('portfolio_bio')
-    #     resp = self.client.get(url)
-    #     self.assertEqual(resp.status_code, 200)
-
-    # def test_portfolio_project_list_view(self):
-    #     url = reverse('portfolio_project_list')
-    #     resp = self.client.get(url)
-    #     self.assertEqual(resp.status_code, 200)
-
-    # def test_portfolio_project_detail_view(self):
-    #     self.create_project()
-    #     url = reverse('portfolio_project_detail', kwargs={'pk': 1})
-    #     resp = self.client.get(url)
-    #     self.assertEqual(resp.status_code, 200)
-
-    # def test_portfolio_certification_list_view(self):
-    #     certification = self.create_certification()
-    #     url = reverse('portfolio_certification_list')
-    #     resp = self.client.get(url)
-    #     self.assertEqual(resp.status_code, 200)
-    #     self.assertIn((certification.name).encode(), resp.content)

@@ -38,6 +38,7 @@ INSTALLED_APPS = [
 
     'captcha',
     'bootstrap5',
+    'axes',
 ]
 
 MIDDLEWARE = [
@@ -49,6 +50,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    'axes.middleware.AxesMiddleware',
 ]
 
 ROOT_URLCONF = 'portfolio_project.urls'
@@ -181,7 +183,10 @@ SILENCED_SYSTEM_CHECKS = ['captcha.recaptcha_test_key_error']
 
 
 # Allow login via either username or email
-AUTHENTICATION_BACKENDS = ['expense_tracker.backends.EmailAuthBackend']
+AUTHENTICATION_BACKENDS = [
+    'axes.backends.AxesStandaloneBackend',
+    'expense_tracker.backends.EmailAuthBackend'
+]
 
 
 # Use temp sqlite3 db if running tests
@@ -190,3 +195,9 @@ if 'test' in sys.argv:
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'test_database'
     }
+
+
+# Axes settings (bot login protection)
+AXES_FAILURE_LIMIT = 10
+AXES_LOCK_OUT_AT_FAILURE = True
+AXES_COOLOFF_TIME = 1 #hour(s)

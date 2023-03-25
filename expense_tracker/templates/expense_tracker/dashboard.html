@@ -76,15 +76,15 @@
                     Balance: 
                     {% if balance > 0 %} 
                         <span class="text-success">
-                            {{Currency.currency_symbol}}{{ balance|floatformat:-2|intcomma }}</span>
+                            {{Currency}}{{ balance|floatformat:-2|intcomma }}</span>
                     {% else %} 
                         <span class="text-danger">
-                            {{Currency.currency_symbol}}{{ balance|floatformat:-2|intcomma }}</span>
+                            {{Currency}}{{ balance|floatformat:-2|intcomma }}</span>
                     {% endif %} 
                 </div>
                 <div class="total_spent">
                     Expenses:
-                    {{Currency.currency_symbol}}{{ tot_expenses|floatformat:-2|intcomma }}
+                    {{Currency}}{{ tot_expenses|floatformat:-2|intcomma }}
                 </div>
             </th>
         </tr>

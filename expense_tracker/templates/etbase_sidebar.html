@@ -6,7 +6,7 @@
         <li class="mb-1">
             <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse"
                 data-bs-target="#home-collapse" aria-expanded="true">
-                <i class="fa-solid fa-user fa-sm" id="user-icon"></i>&nbsp;{{user.username}}
+                <i class="fa-solid fa-user fa-sm" id="user-icon"></i>&nbsp;{{user.username|truncatechars:18}}
             </button>
             <div class="collapse show" id="home-collapse">
                 <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">

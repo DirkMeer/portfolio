@@ -16,6 +16,7 @@ from django.db.models.query_utils import Q
 
 from .forms import SignUpForm, PasswordResetFormCaptcha, CurrencyEditForm
 from .decorators import user_not_authenticated
+from .demo_user import *
 from .models import *
 from .app_settings import *
 from .graphs import get_chart_data, pie_chart, bar_chart
@@ -28,8 +29,8 @@ LOGIN_URL = '/user/login/'
 @login_required(login_url=LOGIN_URL)
 def dashboard(request):
     try: # Get desired view from url query
-        month: int = int(request.GET.get('month'))
-        year: int = int(request.GET.get('year'))
+        month = int(request.GET.get('month'))
+        year = int(request.GET.get('year'))
     except (ValueError, TypeError):
         # Use today as default if not provided
         month: int = datetime.now().month
@@ -211,6 +212,12 @@ def set_currency(request):
     context['ref_year'], context['ref_month'] = get_reference_year_month(request)
     return render(request, './expense_tracker/set_currency.html', context)
 
+
+def demo_account(request):
+    demo_user = create_and_log_in_demo_user(request)
+    if demo_user:
+        mock_data = create_mock_user_data(request, demo_user)
+    return redirect('dashboard')
 
 
 

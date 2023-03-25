@@ -7,6 +7,7 @@ urlpatterns = [
     path('delete_item/<int:pk>', delete_item, name='delete_item'),
     path('category_dash/', category_dash, name='category_dash'),
     path('set_currency/', set_currency, name='set_currency'),
+    path('demo_account/', demo_account, name='demo_account'),
     path('', dashboard, name='dashboard'),
     # User management urls
     path('signup/', signup, name='signup'),

@@ -105,6 +105,8 @@ def create_mock_user_data(request, user):
     create_expense('Car payment', 423.86, user, cat_car, get_date())
     create_expense('Gas', 64.78, user, cat_car, get_date())
     create_expense('Grocery shopping', 86.75, user, cat_groceries, get_date())
+    create_expense('Birthday cake', 8.75, user, cat_groceries, get_date())
+    create_expense('Restocking freezer', 55.18, user, cat_groceries, get_date())
     create_expense('Weekly groceries', 126.25, user, cat_groceries, get_date())
     create_expense('Snacks and bread', 8.60, user, cat_groceries, get_date())
     create_expense('Fruit market', 12, user, cat_groceries, get_date())

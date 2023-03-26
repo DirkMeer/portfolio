@@ -115,6 +115,29 @@ def create_mock_user_data(request, user):
     create_expense('Cleaning supplies', 17.50, user, cat_nonfood, get_date())
     create_expense('New chairs', 129.50, user, cat_nonfood, get_date())
 
+    create_expense('Catfood', 11.50, user, cat_pets, get_date(-1))
+    create_expense('Cat snacks', 12.50, user, cat_pets, get_date(-1))
+    create_expense('Cat snacks', 4.95, user, cat_pets, get_date(-1))
+    create_expense('New cat tower', 65.40, user, cat_pets, get_date(-1))
+    create_expense('Medicine', 9.45, user, cat_medical, get_date(-1))
+    create_expense('Italian food', 33.95, user, cat_rest_deli, get_date(-1))
+    create_expense('Chinese', 28.30, user, cat_rest_deli, get_date(-1))
+    create_expense('Falafel', 16.85, user, cat_rest_deli, get_date(-1))
+    create_expense('Pancakes', 23.46, user, cat_rest_deli, get_date(-1))
+    create_expense('Car payment', 426.34, user, cat_car, get_date(-1))
+    create_expense('Gas', 58.36, user, cat_car, get_date(-1))
+    create_expense('Grocery shopping', 92.75, user, cat_groceries, get_date(-1))
+    create_expense('Birthday cake', 9.25, user, cat_groceries, get_date(-1))
+    create_expense('Restocking freezer', 56.38, user, cat_groceries, get_date(-1))
+    create_expense('Weekly groceries', 113.25, user, cat_groceries, get_date(-1))
+    create_expense('Snacks and bread', 9.60, user, cat_groceries, get_date(-1))
+    create_expense('Fruit market', 10, user, cat_groceries, get_date(-1))
+    create_expense('Groceries', 23.68, user, cat_groceries, get_date(-1))
+    create_expense('Socks', 12.99, user, cat_nonfood, get_date(-1))
+    create_expense('Jacket', 36.95, user, cat_nonfood, get_date(-1))
+    create_expense('Cleaning supplies', 12.50, user, cat_nonfood, get_date(-1))
+    create_expense('New desk for study', 112.50, user, cat_nonfood, get_date(-1))
+
 
 
 

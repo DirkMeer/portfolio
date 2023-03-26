@@ -190,7 +190,7 @@ AUTHENTICATION_BACKENDS = [
 
 
 # Use temp sqlite3 db if running tests
-if 'test' in sys.argv:
+if 'test' in sys.argv or config('LOCAL', cast=bool):
     DATABASES['default'] = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'test_database'
@@ -201,3 +201,4 @@ if 'test' in sys.argv:
 AXES_FAILURE_LIMIT = 10
 AXES_LOCK_OUT_AT_FAILURE = True
 AXES_COOLOFF_TIME = 1 #hour(s)
+

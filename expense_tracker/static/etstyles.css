@@ -41,7 +41,6 @@ body {
 }
 
 
-
 /* Container for the graphs */
 .graph-fluid {
     max-width: 500px;
@@ -59,6 +58,14 @@ iframe {
     margin-left: 0.4em;
 }
 
+
+/* Pencil icon on hovering an editable */
+.edit-link div:after {
+    content: '\a0\a0\a0\a0\a0'
+}
+.edit-link:hover div:after {
+    content: ' ✏️'
+}
 
 
 /* Navbar hamburger menu addition */

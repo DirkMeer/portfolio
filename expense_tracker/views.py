@@ -15,11 +15,11 @@ from django.contrib.auth import get_user_model
 from django.db.models.query_utils import Q
 
 from .forms import SignUpForm, PasswordResetFormCaptcha, CurrencyEditForm
-from .decorators import user_not_authenticated
+from .decorators import *
 from .demo_user import *
 from .models import *
 from .app_settings import *
-from .graphs import get_chart_data, pie_chart, bar_chart
+from .graphs import *
 from .utils import *
 from .tokens import account_activation_token
 
@@ -213,15 +213,16 @@ def set_currency(request):
     return render(request, './expense_tracker/set_currency.html', context)
 
 
+
+### Email and account registration views ###
 def demo_account(request):
     demo_user = create_and_log_in_demo_user(request)
     if demo_user:
         mock_data = create_mock_user_data(request, demo_user)
+        messages.add_message(request, messages.SUCCESS, "Welcome to the demo user account. This one has been specially and uniquely generated with some data just for you! So please feel free to edit, delete or add anything and test the functionality, it will not affect anyone else on the site. If you log out a demo account you will not be able to log in to it again, but you can always create another demo account. Alternatively, you can create a real permanent account with password, activation and password reset abilities linked to your email address")
     return redirect('dashboard')
 
 
-
-### Email and account registration views ###
 def signup(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)
@@ -282,6 +283,7 @@ def activate(request, uidb64, token):
     return redirect('dashboard')
 
 
+@redirect_demo_users_to_dash()
 @login_required(login_url=LOGIN_URL)
 def change_password(request):
     user = request.user

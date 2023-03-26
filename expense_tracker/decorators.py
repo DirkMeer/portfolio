@@ -1,4 +1,5 @@
 from django.shortcuts import redirect
+from django.contrib import messages
 
 # Check if the user is NOT logged in. If logged in redirect to the home page.
 def user_not_authenticated(function=None, redirect_url='/'):
@@ -14,9 +15,26 @@ def user_not_authenticated(function=None, redirect_url='/'):
             return view_func(request, *args, **kwargs)
         
         return _wrapped_view
-    
 
     if function:
         return decorator(function) # pragma: no cover / decorator's functioning tested both ways
+    
+    return decorator
+
+
+def redirect_demo_users_to_dash(function=None):
+    # If user == demo user redirect to dash with message. Else just carry on.
+    def decorator(view_func):
+
+        def _wrapped_view(request, *args, **kwargs):
+            if request.user.username[:9] == 'demo_user':
+                messages.add_message(request, messages.ERROR, "Auto-generated demo accounts can not have their passwords changed or reset. Please make a real account if you want to try this functionality.")
+                return redirect('dashboard')
+            return view_func(request, *args, **kwargs)
+        
+        return _wrapped_view
+        
+    if function:
+        return decorator(function)
     
     return decorator

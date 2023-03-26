@@ -164,4 +164,7 @@ def create_mock_user_data(request, user):
     create_expense('Plants', 12.50, user, cat_nonfood, get_date(-2))
 
 
-# make sure demo accounts cannot access change password
+
+
+
+

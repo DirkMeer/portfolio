@@ -18,7 +18,7 @@
         <tr>
             <td class="ps-2"><a 
                 href="{% url 'edit_item' pk=income.id %}?mode=MoIn" 
-                class="text-decoration-none link-dark">
+                class="text-decoration-none link-dark edit-link">
                 <div>{{ income.description }}</div>
             </a></td>
             <td class="text-success">+{{ income.amount|floatformat:-2|intcomma }}</td>
@@ -31,7 +31,7 @@
         <tr>
             <td class="ps-2"><a 
                 href="{% url 'edit_item' pk=expense.id %}?mode=MoEx" 
-                class="text-decoration-none link-dark">
+                class="text-decoration-none link-dark edit-link">
                 <div>{{ expense.description }}</div>
             </a></td>
             <td>-{{ expense.amount|floatformat:-2|intcomma }}</td>
@@ -44,7 +44,7 @@
         <tr>
             <td class="ps-2"><a 
                 href="{% url 'edit_item' pk=income.id %}?mode=In" 
-                class="text-decoration-none link-dark">
+                class="text-decoration-none link-dark edit-link">
                 <div>{{ income.description }}</div>
             </a></td>
             <td class="text-success">+{{ income.amount|floatformat:-2|intcomma }}</td>
@@ -57,7 +57,7 @@
         <tr>
             <td class="ps-2"><a 
                 href="{% url 'edit_item' pk=expense.id %}?mode=Ex" 
-                class="text-decoration-none link-dark">
+                class="text-decoration-none link-dark edit-link">
                 <div>{{ expense.description }}</div>
             </a></td>
             <td>-{{ expense.amount|floatformat:-2|intcomma }}</td>

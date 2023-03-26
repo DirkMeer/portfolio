@@ -31,7 +31,20 @@
                 class="btn btn-outline-danger mt-1 me-sm-2 px-4">
                 Forgot password?
             </a>
+
+            <a href="{% url 'demo_account' %}" 
+            class="btn btn-primary mt-1 me-sm-2 px-4"
+            id="demo_btn">
+            <span class="spinner-grow mb-1" 
+                style="width: 6px; height: 6px;"
+                aria-hidden="true"></span>
+            No-registration demo*
+            </a>
+
         </div>
+        <p class="mt-4" style="color: grey;"><small>
+            *If you just want to try the main functionality of the website and bypass the registration and email validation process, this will provide you with an instant demo account prepopulated with some mock data for you to play around with.
+        </small></p>
     </form>
 </div>
 

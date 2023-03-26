@@ -23,7 +23,7 @@
             </a></td>
             <td class="text-success">+{{ income.amount|floatformat:-2|intcomma }}</td>
             <td>Monthly</td>
-            <td class="d-none d-sm-table-cell">Monthly</td>
+            <td class="d-none d-sm-table-cell">Monthly income</td>
         </tr>
         {% endfor %} 
 <!-- monthly expenses listing -->
@@ -36,7 +36,7 @@
             </a></td>
             <td>-{{ expense.amount|floatformat:-2|intcomma }}</td>
             <td>Monthly</td>
-            <td class="d-none d-sm-table-cell">Monthly</td>
+            <td class="d-none d-sm-table-cell">Monthly expense</td>
         </tr>
         {% endfor %} 
 <!-- income listing -->

@@ -93,6 +93,7 @@ def create_mock_user_data(request, user):
     create_monthly_expense('Phones', 60, user)
     create_monthly_expense('Internet', 35, user)
     create_income('Sold old bike', 150, user)
+
     create_expense('Catfood', 12.50, user, cat_pets, get_date())
     create_expense('Cat grooming', 23.50, user, cat_pets, get_date())
     create_expense('Cat snacks', 8.75, user, cat_pets, get_date())
@@ -125,6 +126,7 @@ def create_mock_user_data(request, user):
     create_expense('Falafel', 16.85, user, cat_rest_deli, get_date(-1))
     create_expense('Pancakes', 23.46, user, cat_rest_deli, get_date(-1))
     create_expense('Car payment', 426.34, user, cat_car, get_date(-1))
+    create_expense('Car repairs', 200, user, cat_car, get_date(-1))
     create_expense('Gas', 58.36, user, cat_car, get_date(-1))
     create_expense('Grocery shopping', 92.75, user, cat_groceries, get_date(-1))
     create_expense('Birthday cake', 9.25, user, cat_groceries, get_date(-1))
@@ -138,7 +140,28 @@ def create_mock_user_data(request, user):
     create_expense('Cleaning supplies', 12.50, user, cat_nonfood, get_date(-1))
     create_expense('New desk for study', 112.50, user, cat_nonfood, get_date(-1))
 
-
+    create_expense('Catfood', 20.50, user, cat_pets, get_date(-2))
+    create_expense('Cat snacks', 16.50, user, cat_pets, get_date(-2))
+    create_expense('Cat snacks', 2.95, user, cat_pets, get_date(-2))
+    create_expense('Cat grooming', 18.60, user, cat_pets, get_date(-2))
+    create_expense('Turkish kebab', 12.95, user, cat_rest_deli, get_date(-2))
+    create_expense('Chinese', 29.60, user, cat_rest_deli, get_date(-2))
+    create_expense('Burritos', 16.85, user, cat_rest_deli, get_date(-2))
+    create_expense('Chicken', 32.20, user, cat_rest_deli, get_date(-2))
+    create_expense('Car payment', 420.34, user, cat_car, get_date(-2))
+    create_expense('Gas', 78.56, user, cat_car, get_date(-2))
+    create_expense('Grocery shopping', 12.75, user, cat_groceries, get_date(-2))
+    create_expense('Grocery shopping', 98.34, user, cat_groceries, get_date(-2))
+    create_expense('Cookies', 5.25, user, cat_groceries, get_date(-2))
+    create_expense('Restocking freezer', 24.56, user, cat_groceries, get_date(-2))
+    create_expense('Weekly groceries', 146.25, user, cat_groceries, get_date(-2))
+    create_expense('Snacks and bread', 7, user, cat_groceries, get_date(-2))
+    create_expense('Fruit market', 12, user, cat_groceries, get_date(-2))
+    create_expense('Groceries', 23.84, user, cat_groceries, get_date(-2))
+    create_expense('New Suit', 87.99, user, cat_nonfood, get_date(-2))
+    create_expense('Sweater', 36.95, user, cat_nonfood, get_date(-2))
+    create_expense('Cleaning supplies', 22.50, user, cat_nonfood, get_date(-2))
+    create_expense('Plants', 12.50, user, cat_nonfood, get_date(-2))
 
 
 # make sure demo accounts cannot access change password

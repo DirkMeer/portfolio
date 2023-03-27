@@ -190,7 +190,7 @@ AUTHENTICATION_BACKENDS = [
 
 
 # Use temp sqlite3 db if running tests
-if 'test' in sys.argv or config('LOCAL', cast=bool):
+if 'test' in sys.argv: #or config('LOCAL', cast=bool):
     DATABASES['default'] = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'test_database'

@@ -1,5 +1,6 @@
 {% extends "base.html" %} 
 {% load static %} 
+{% load allow_bold_markup %} 
 
 {% block content %} 
     <div class="row">
@@ -9,7 +10,7 @@
         </div>
         <div class ="col-md-6 col-xl-7">
             <h5>About the project:</h5>
-            <span class="mb-4">{{ project.description|linebreaks }}</span>
+            <span class="mb-4">{{ project.description|allow_bold_markup|safe|linebreaks }}</span>
             <h5 class="mt-4">Technology stack</h5>
             <p class="mb-3">{{ project.technology }}</p>
             <div class="d-grid gap-2 col-xs-12 mx-auto">

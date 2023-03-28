@@ -10,8 +10,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DirkMeer.com</title>
+    <!-- css, js -->
     <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <script src="{% static 'utils.js' %}"></script>
     <link rel="icon" href="{% static 'favicon/favicon.ico' %}">
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/6ec1fc927f.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <style>
@@ -21,7 +25,7 @@
   </style>
     <nav class="navbar navbar-custom navbar-expand-md navbar-light">
         <div class="container col-md-12">
-            <a class="navbar-brand me-4" href="{% url 'portfolio_bio' %}">
+            <a class="navbar-brand me-3" href="{% url 'portfolio_bio' %}">
               <!-- <img src="{% static 'favicon/192.png' %}" alt="Site logo" width="30" height="30" class="d-inline-block align-text-top"> -->
               <span>DirkMeer</span>
             </a>
@@ -45,8 +49,9 @@
         </div>
     </nav>
     <br>
-    <div class="container col-md-12">
+    <div class="container col-md-12 mb-3">
     {% block content %}{% endblock %}
     </div>
+    {% include 'footer.html' %}
 </body>
 </html>

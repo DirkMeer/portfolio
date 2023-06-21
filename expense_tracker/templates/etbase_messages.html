@@ -2,12 +2,11 @@
 
 {% if messages %}
 {% for message in messages %}
-<div class="alert {{ message.tags }} alert-dismissible fade show m-0 py-3 px-3 rounded-0" role="alert">
+<div class="alert {{ message.tags }} alert-dismissible fade show m-0 py-3 px-3 rounded-0 message" role="alert">
     {{message | safe}}
     <button type="button" class="btn-close mx-2 my-2 p-0" data-bs-dismiss="alert" aria-label="close"></button>
 </div>
 {% endfor %}
-</div>
 {% endif %}
 
 {% endblock %}

@@ -14,7 +14,7 @@ cryptography==39.0.2
 cycler==0.11.0
 defusedxml==0.7.1
 dj-database-url==1.2.0
-Django==4.1.7
+Django==4.1.10
 django-allauth==0.53.0
 django-axes==5.40.1
 django-bootstrap-v5==1.0.11
